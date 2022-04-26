@@ -37,6 +37,7 @@ class Voxell(Button):
 
 
   def input(self, key):
+    print(key)
     if self.hovered:
       if key == 'left mouse down':
         if block_pick == 1: voxel = Voxell(position= self.position + mouse.normal, texture=grass_texture)
@@ -46,6 +47,9 @@ class Voxell(Button):
         
       if key == 'right mouse down':
         destroy(self)
+
+      if key == 'escape':
+        sys.exit()
 
 class Sky(Entity):
   def __init__(self):
